@@ -1,0 +1,69 @@
+:root {
+    --primary: #e50914;
+    --bg: #0a0a0a;
+    --card-bg: #1a1a1a;
+    --text: #ffffff;
+}
+@media (max-width: 768px) {
+    /* design pour téléphone */
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Système d'onglets (Vues) */
+.view { display: none; }
+.view.active { display: block; animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 5%; background: rgba(0,0,0,0.95);
+    position: fixed; width: 100%; z-index: 1000; box-sizing: border-box;
+}
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: #aaa; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: white; }
+
+/* Bannière */
+.banner {
+    height: 70vh;
+    background: linear-gradient(to top, var(--bg), transparent), url('https://images.alphacoders.com/132/1329245.jpeg') center/cover;
+    display: flex; align-items: flex-end; padding: 0 5% 50px;
+}
+.badge { background: var(--primary); padding: 5px 10px; border-radius: 3px; font-weight: bold; }
+.banner h1 { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; margin: 10px 0; }
+
+/* Grilles communes */
+.container { padding: 40px 5%; }
+.grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;
+}
+
+/* Cartes (Épisodes & Personnages) */
+.card {
+    background: var(--card-bg); border-radius: 8px; overflow: hidden;
+    cursor: pointer; transition: 0.3s; border: 1px solid #333;
+}
+.card:hover { transform: scale(1.05); border-color: var(--primary); }
+.card img { width: 100%; height: 150px; object-fit: cover; }
+.card-info { padding: 15px; }
+.card-info h4 { margin: 0 0 5px 0; color: var(--primary); }
+.card-info p { margin: 0; font-size: 0.9rem; color: #ccc; }
+
+/* Lecteur Vidéo */
+.modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); z-index: 2000;
+}
+.modal-box { width: 90%; max-width: 900px; margin: 5% auto; position: relative; }
+.close-btn { position: absolute; top: -40px; right: 0; font-size: 40px; cursor: pointer; }
+#videoPlayerContainer { background: #000; aspect-ratio: 16 / 9; }
+iframe, video { width: 100%; height: 100%; border: none; }

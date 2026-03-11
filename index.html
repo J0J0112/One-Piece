@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Line VOD | Fan Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">ONE<span>PIECE</span></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="switchView('accueil')" class="active" id="nav-accueil">Accueil</a></li>
+            <li><a href="#" onclick="switchView('episodes')" id="nav-episodes">Tous les épisodes</a></li>
+            <li><a href="#" onclick="switchView('personnages')" id="nav-personnages">Personnages</a></li>
+        </ul>
+    </nav>
+
+    <div id="view-accueil" class="view active">
+        <header class="banner">
+            <div class="banner-content">
+                <span class="badge">Dernier Arc</span>
+                <h1>EGGHEAD</h1>
+                <p>L'île du futur vous ouvre ses portes. Préparez-vous à découvrir les secrets du monde.</p>
+            </div>
+        </header>
+        <section class="container">
+            <h2>Récemment ajoutés</h2>
+            <div class="grid" id="recentGrid"></div>
+        </section>
+    </div>
+
+    <div id="view-episodes" class="view">
+        <section class="container" style="padding-top: 100px;">
+            <h2>Liste complète des épisodes</h2>
+            <div class="grid" id="allEpisodesGrid"></div>
+        </section>
+    </div>
+
+    <div id="view-personnages" class="view">
+        <section class="container" style="padding-top: 100px;">
+            <h2>Équipage au Chapeau de Paille & Alliés</h2>
+            <div class="grid" id="charactersGrid"></div>
+        </section>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-box">
+            <span class="close-btn" onclick="closeVideo()">&times;</span>
+            <div id="videoPlayerContainer"></div>
+            <div class="video-details">
+                <h2 id="modalTitle">Titre</h2>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
